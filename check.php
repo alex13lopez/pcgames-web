@@ -1,8 +1,6 @@
 <?php
     session_start();
-
-    $_SESSION["name"] = $_POST["name"];
-    $_SESSION["surname"] = $_POST["surname"];
+    
     $_SESSION["mail"] = $_POST["mail"];
     $_SESSION["user"] = $_POST["user"];
     $_SESSION["pass"] = $_POST["pass"];
@@ -28,7 +26,7 @@
             echo "Field '$field' must not start with a digit.    ";
             session_destroy();
             ?>
-            <form action="index.html" method="">
+            <form action="register.html">
                 <input type='submit' value='Return to Main Form'><br>
             </form>
             <?php
@@ -39,7 +37,7 @@
             echo "Passwords do not match, please make sure you typed them properly.    ";
             session_destroy();
             ?>
-            <form action="index.html" method="">
+            <form action="register.html">
                 <input type='submit' value='Return to Main Form'><br>
             </form>
             <?php
