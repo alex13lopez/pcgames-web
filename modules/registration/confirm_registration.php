@@ -29,7 +29,7 @@
 
         $mail = $_SESSION['mail'];
         $user = $_SESSION['user'];
-        $pass = $_SESSION['pass'];
+        $pass = password_hash($_SESSION['pass'], PASSWORD_DEFAULT);
 
         $query = "INSERT INTO users (email, user, passwd) VALUES ('$mail', '$user', '$pass')";
         mysqli_query($link, $query);
@@ -37,6 +37,6 @@
         session_destroy();
 
         echo "Usuario registrado correctamente.";
-        header('refresh: 3; url=index.html');
+        header('refresh: 2; url=/index.html');
     }
 ?>
