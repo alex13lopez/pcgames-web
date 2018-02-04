@@ -27,7 +27,7 @@
             exit;
         }
 
-        $mail = $_SESSION['mail'];
+        $mail = $_SESSION['email'];
         $user = $_SESSION['user'];
         $pass = password_hash($_SESSION['pass'], PASSWORD_DEFAULT);
 
