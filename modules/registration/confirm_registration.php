@@ -36,7 +36,7 @@
         mysqli_close($link);
         session_destroy();
 
-        echo "Usuario registrado correctamente.";
+        echo "User registered successfully";
         header('refresh: 2; url=/index.html');
     }
 ?>
