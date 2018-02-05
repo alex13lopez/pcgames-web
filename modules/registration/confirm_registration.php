@@ -11,13 +11,13 @@
         ?>
         <br>
         <form action="#" method="post">
-            <input type="submit" value="Registrame" name="Registrame">
-            <input type="button" onclick="window.location = 'register.html'" value="Cancela">
+            <input type="submit" value="Sign me up" name="sign_up">
+            <input type="button" onclick="window.location = 'register.html'" value="Cancel">
         </form>
 
 <?php
      
-     if (isset($_POST['Registrame'])) {
+     if (isset($_POST['sign_up'])) {
         $link = mysqli_connect("127.0.0.1", "root", "Abc@1234!", "pcgames");
 
         if (!$link) {

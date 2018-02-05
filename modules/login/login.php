@@ -39,5 +39,9 @@
         $_SESSION["id"] = $re["id"];
         header("Location: /website/test_login.php");
     }
+    else {
+        echo "Login incorrect. Try again.";
+        header("refresh: 2, url=login.html");
+    }
 
 ?>
