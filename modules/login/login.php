@@ -17,7 +17,7 @@
     $login = $_SESSION["login"];
     $pass = $_SESSION["pass"];
 
-    if (preg_match("/^.*@.*\.[[:alpha:]][[:alpha:]]+/", $login)) {
+    if (preg_match("/^.*@.*\.[[:alpha:]][[:alpha:]]+/", "$login")) {
         # Is the login an email? 
         $get_user = "SELECT user FROM users WHERE email='$login'";
         $result = mysqli_query($connect, $get_user);
@@ -26,10 +26,10 @@
     }
     else {
         # Nope, it's a username
-        $user = $login;
+        $user = "$login";
     }
 
-    $query = "SELECT id, passwd FROM users WHERE user='$user'";
+    $query = "SELECT id, passwd, roles FROM users WHERE user='$user'";
     $result = mysqli_query($connect, $query);
 
     $re = mysqli_fetch_array($result);
@@ -37,11 +37,12 @@
 
     if (password_verify($pass, $pass_h)) {
         $_SESSION["id"] = $re["id"];
+        $_SESSION["roles"] = $re["roles"];
         header("Location: /website/test_login.php");
     }
     else {
         echo "Login incorrect. Try again.";
-        header("refresh: 2, url=login.html");
+        header("refresh: 0.5, url=login.html");
     }
 
 ?>
