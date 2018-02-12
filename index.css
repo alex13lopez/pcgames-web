@@ -6,32 +6,33 @@ html {
 
 body {
     position: absolute;
-    width: 90%;
+    width: 80%;
     height: 100%;
-    margin-left: 5%;
+    margin-left: 10%;
 }
 
 .header {
     position: relative;
     width: 100%;
-    height: 65px;
+    height: 4.0625em;
     background-color: rgb(28, 64, 182);
-    border: 5px solid black;
+    border: 0.3125em solid black;
 }
 
 .searchbar {
     position: relative;
     height: 100%;
     width: 25%;
-    margin: 0;
+    margin: 0 auto;
+    margin-top: 0.3em;
     margin-left: 38%;
     float: left;
 }
 
 .searchbar input {
-    height: 38px;
-    width: 99%;
-    margin-top: 10px;
+    height: 2.375em;
+    width: 100%;
+    margin-top: 0.625em;
 }
 
 .buttons {
@@ -46,24 +47,23 @@ body {
     height: 40%;
     width: 55%;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 1.25em;
 }
 
 .buttons .center input[value=Login] {
     margin: 0 auto;
-    margin-left: 40px;
+    margin-left: 2.5em;
 }
 
 .body {
-    height: 87%;
-    width: 70%;
+    height: 90%;
+    width: 100%;
     margin: 0;
-    margin-top: 1%;
-    margin-left: 15%;
-    border: 2px solid black;
+    border: 0.3125em solid black;
+    border-top: 0;
 }
 
-.body p {
+/* .body p {
     text-align: center;
     vertical-align: middle;
-}
+} */
