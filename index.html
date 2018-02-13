@@ -8,7 +8,7 @@
 <body>
     <div class="header">
         <div class="searchbar">
-            <form action="#" method="POST">
+            <form action="website/search.php" method="GET" target="body_frame">
                 <input type="text" name="search" placeholder="Search">
             </form>
         </div>
@@ -18,7 +18,8 @@
         </div>        
     </div>
     <div class="body">
-        <span>DAME CÓDIGO QUE TENGO HAMBRE PROGRAMADOR DE PALO</span>
+        <!-- REMINDER: Put in 'src' the default page that will load when the user loads the site -->
+        <iframe src="" name="body_frame"></iframe>
     </div>
 </body>
 </html>
