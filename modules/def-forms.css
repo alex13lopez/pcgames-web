@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 90%;
+    height: 70%;
+    margin: 0 auto;
+}
+
+.center {
+    width: 50%;
+    height: 50%;
+    margin-top: 18%;
+    margin-left: 26%;
+}
+
+input {
+    width: 100%;
+    height: 4.85em;
+    display: inline-block;
+    margin: 0.6px;
+    padding: 1em;
+    border: 0.125em solid black;
+    background-color: rgb(61, 68, 73);
+    color: #d5f4e6;
+    font-weight: bold;
+}
