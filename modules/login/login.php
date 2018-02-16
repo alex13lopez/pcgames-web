@@ -29,16 +29,19 @@
         $user = "$login";
     }
 
-    $query = "SELECT id, passwd, roles FROM users WHERE user='$user'";
+    $query = "SELECT id, user, passwd, roles FROM users WHERE user='$user'";
     $result = mysqli_query($connect, $query);
 
     $re = mysqli_fetch_array($result);
     $pass_h = $re["passwd"];
 
+    mysqli_close($connect);
+
     if (password_verify($pass, $pass_h)) {
         $_SESSION["id"] = $re["id"];
         $_SESSION["roles"] = $re["roles"];
-        header("Location: /website/test_login.php");
+        $_SESSION["user"] = $re["user"];
+        header("Location: http://www.pcgames.com");
     }
     else {
         echo "Login incorrect. Try again.";

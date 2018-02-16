@@ -1,7 +1,7 @@
 - Find a way to forbid access to 'login' and 'register' unless they are loaded in the main page.
 - Backend of User, WebMaster and Admin.
 - Games found by search as links to their pages.
-- Logo of PCGAMES in the header.
-- Welcome users with their name in between searchbar and buttons.
+- Make logo less pimpy
+- Make welcome to users less fugly
 - Anti sqli queries
 - Add more games to DB
