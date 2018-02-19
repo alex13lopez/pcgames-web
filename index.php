@@ -44,7 +44,7 @@
     </div>
     <div class="body">
         <!-- REMINDER: Put in 'src' the default page that will load when the user loads the site -->
-        <iframe src="" name="body_frame"></iframe>
+        <iframe src="website/default-web.php" name="body_frame"></iframe>
     </div>
 </body>
 </html>

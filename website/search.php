@@ -11,7 +11,7 @@
         exit;
     }
 
-    $query = "SELECT * FROM games WHERE Match(title) AGAINST ('$search' IN BOOLEAN MODE) ORDER BY title LIMIT 5";
+    $query = "SELECT * FROM games WHERE Match(title) AGAINST ('\"$search\"' IN BOOLEAN MODE) ORDER BY title LIMIT 5";
 
     $qresult = mysqli_query($connect, $query);
     ?>
