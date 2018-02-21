@@ -8,7 +8,7 @@
 <body>
     <div class="header">
         <div class="logo">
-            <img src="LOGO/logo3.png" alt="logo.png">
+            <a href="http://www.pcgames.com"><img src="LOGO/logo3.png" alt="logo.png"></a>
         </div>
         <div class="searchbar">
             <form action="website/search.php" method="GET" target="body_frame">
@@ -43,7 +43,6 @@
         
     </div>
     <div class="body">
-        <!-- REMINDER: Put in 'src' the default page that will load when the user loads the site -->
         <iframe src="website/default-web.php" name="body_frame"></iframe>
     </div>
 </body>

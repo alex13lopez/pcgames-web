@@ -11,7 +11,7 @@
         exit;
     }
 
-    $query = "SELECT * FROM games WHERE Match(title) AGAINST ('\"$search\"' IN BOOLEAN MODE) ORDER BY title LIMIT 5";
+    $query = "SELECT id, title, platform, type FROM games WHERE Match(title) AGAINST ('\"$search\"' IN BOOLEAN MODE) ORDER BY title LIMIT 5";
 
     $qresult = mysqli_query($connect, $query);
     ?>
@@ -26,6 +26,16 @@
         body {
             color: #d5f4e6;
         }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:hover {
+            background-color: rgb(95, 150, 231);
+        }
+
     </style>
     
     <table class="gamestable" align="center">
@@ -33,15 +43,11 @@
         <tr>
             <th>Game</th>
             <th>Platform</th>
-            <th>Price</th>
-            <th>Region</th>
             <th>Type</th>    
         <?php
         while ($row=mysqli_fetch_array($qresult)) {
-            echo '<tr><td>'.$row["title"].'</td>';
+            echo '<tr><td>'."<a href='http://www.pcgames.com/website/gamepage.php?id=$row[id]'>".$row["title"].'</a></td>';
             echo '<td>'.$row["platform"].'</td>';
-            echo '<td>'.$row["price"].'</td>';
-            echo '<td>'.$row["region"].'</td>';        
             echo '<td>'.$row["type"].'</td></tr>';
         }
 
