@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="default-web.css">
 </head>
 <body>
-
+    <span class="title"> DESTACADOS ESTA SEMANA </span>
     <?php
 
         $promotions_file = "promotions.txt";
@@ -45,7 +45,7 @@
         echo "<div class='row'>";             
         while ($query_row = mysqli_fetch_array($result)) { 
             echo "<div class='column'>";
-            echo "<div class='title'><span>".$query_row["title"]."</span></div>";
+            echo "<div class='gametitle'><span>".$query_row["title"]."</span></div>";
             echo "<div class='cover'><img src='../IMG/$query_row[id]'></div>";
             echo "</div>";        
             }     
