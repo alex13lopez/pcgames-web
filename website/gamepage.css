@@ -54,7 +54,7 @@ body {
 .gameinfo {
     margin: 0;
     display: block;
-    margin-top: 2%;
+    margin-top: 6.3%;
     margin-right: 10%;
     float: right;
     height: 30%;
@@ -64,6 +64,7 @@ body {
 .platform {
     margin: 0;
     display: block;
+    padding: 1%;
     height: 35%;
     width: 50%;
     float: left;
@@ -88,6 +89,7 @@ body {
 .type {
     margin: 0;
     display: block;
+    padding: 1%;    
     height: 35%;
     width: 50%;
     float: right;
@@ -112,6 +114,7 @@ body {
     margin: 0;
     display: block;
     clear: both;
+    padding: 1%;    
     height: 65%;
     width: 100%;
     text-align: center;
@@ -136,6 +139,7 @@ body {
     margin: 0 auto;
     display: block;
     clear: both;
+    padding: 1%;    
     height: 25%;
     width: 80%;
 }
@@ -152,4 +156,6 @@ body {
 .descr {
     margin: 0;
     display: block;
+    font-size: larger;
+    margin-top: 1%;
 }
