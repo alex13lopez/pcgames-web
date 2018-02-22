@@ -8,8 +8,9 @@ html {
 }
 
 body {
-    height: 90%;
+    height: 98%;
     width: 99%;
+    border: 1px solid rgb(0, 204, 255);
 }
 
 .gametitle {
@@ -17,7 +18,20 @@ body {
     vertical-align: top;
     height: 10%;
     width: 100%;
-    border: 2px solid black;    
+}
+
+.title {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: auto;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 3em;
+    color: rgb(23, 121, 151);
+    border: none;
+    border-bottom: 1px solid rgb(0, 204, 255);
 }
 
 .gamecover {
@@ -28,8 +42,8 @@ body {
     display: block;
     float: left;
     height: 50%;
-    width: 25%;
-    border: 2px solid black;
+    width: 20%;
+    border: 2px solid rgb(0, 204, 255);
 } 
 
 .gamecover img {
@@ -45,34 +59,77 @@ body {
     float: right;
     height: 30%;
     width: 15%;
-    border: 1px solid black;
 }
 
 .platform {
     margin: 0;
     display: block;
-    height: 25%;
+    height: 35%;
     width: 50%;
     float: left;
-    border: 1px solid black;
+    text-align: center;
+    border: 2px solid rgb(0, 204, 255);
+    border-right: none;
+}
+
+.pl-title {
+    display: block;
+    color: rgb(152, 104, 214);
+    font-size: 0.8em
+}
+
+.pl-platform {
+    display: block;
+    color: grey;
+    font-weight: bolder;
+    font-size: 2.2em;
 }
 
 .type {
     margin: 0;
     display: block;
-    height: 25%;
+    height: 35%;
     width: 50%;
     float: right;
-    border: 1px solid black;
+    text-align: center;
+    border: 2px solid rgb(0, 204, 255);
+}
+
+.ty-title {
+    display: block;
+    color: rgb(152, 104, 214);
+    font-size: 0.8em
+}
+
+.ty-type {
+    display: block;
+    color: grey;
+    font-weight: bold;
+    font-size: 2.2em;
 }
 
 .price {
     margin: 0;
     display: block;
     clear: both;
-    height: 75%;
+    height: 65%;
     width: 100%;
-    border: 1px solid black;
+    text-align: center;
+    border: 2px solid rgb(0, 204, 255);
+    border-top: none;
+}
+
+.pr-title {
+    display: block;
+    color: rgb(152, 104, 214);
+    font-size: 1.5em
+}
+
+.pr-price {
+    display: block;
+    color: grey;
+    font-weight: bold;
+    font-size: 5em;
 }
 
 .description {
@@ -81,5 +138,18 @@ body {
     clear: both;
     height: 25%;
     width: 80%;
-    border: 2px solid black;
+}
+
+.descr-title {
+    margin: 0;
+    display: block;
+    font-size: xx-large;
+    color: rgb(42, 140, 231);
+    text-decoration-line: underline;
+
+}
+
+.descr {
+    margin: 0;
+    display: block;
 }
