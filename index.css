@@ -81,37 +81,40 @@ body {
 .buttons {
     position: relative;
     height: 100%;
-    width: 9%;
     float: right;
+    width: 20%;
+}
+
+.buttons .but1  {
+    margin: 0;
+    position: absolute;
+    display: block;
+    float: left;
+    height: 60%;
+    width: 35%;
+    bottom: 0;
+    left: 28%;
+}
+
+.buttons .but2 {
+    margin: 0;
+    position: absolute;
+    display: block;
+    float: left;
+    height: 60%;
+    width: 35%;   
+    bottom: 0;
+    right: 0;
 }
 
 .buttons input {
-    padding: 0.6em;
+    height: 100%;
+    width: 100%;
+    padding: 2%;
     background-color: rgb(32, 34, 34);
     color: #d5f4e6; 
     font-weight: bold;
-    border: 0.125em solid rgb(0, 68, 255);
-}
-
-.buttons input[value="Login"] {
-    position: absolute;
-    margin: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.buttons input[value="Logout"] {
-    position: absolute;
-    margin: 0;
-    bottom: 0;
-    right: 37%;
-}
-
-.buttons input[value="Sign up"], input[value="Control Panel"] {
-    position: absolute;
-    margin: 0;
-    bottom: 0;
-    right: 0;
+    border: 0.2em solid rgb(0, 68, 255);
 }
 
 .body {

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="default-web.css">
 </head>
 <body>
-    <span class="title"> DESTACADOS ESTA SEMANA </span>
+    <span class="title"> WEEKLY<br>HIGHLIGHTS </span>
     <?php
 
         $promotions_file = "promotions.txt";
