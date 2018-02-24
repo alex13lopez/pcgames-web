@@ -27,7 +27,7 @@ body {
     margin: 0 auto;
     height: 50%;
     width: 50%;
-    border: 2px solid red;
+    border: 2px solid rgb(116, 186, 204);
 }
 
 .more {
@@ -36,7 +36,7 @@ body {
     margin: 0 auto;
     height: 50%;
     width: 50%;
-    border: 2px solid green;
+    border: 2px solid rgb(113, 127, 204);
 }
 
 .userManagement {
@@ -46,10 +46,11 @@ body {
     clear: both;
     height: 50%;
     width: 50%;
-    border: 2px solid blueviolet;
+    border: 2px solid rgb(185, 157, 211);
 }
 
 .cpanel div:hover {
+    color: black;
     background-color: rgb(151, 148, 148);
 }
 
@@ -59,7 +60,7 @@ body {
     float: left;
     height: 50%;
     width: 50%;
-    border: 2px solid yellow;
+    border: 2px solid rgb(128, 219, 173);
 }
 
 .gameManagement2 {
@@ -68,5 +69,19 @@ body {
     clear: both;
     height: 50%;
     width: 100%;
-    border: 2px solid blue;
+    border: 2px solid rgb(75, 187, 93);
+}
+
+span {
+    display: block;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    color: rgb(111, 109, 211);
+}
+
+@media only screen and (min-width: 1080px) {
+    span {
+        margin-top: 25%;
+    }
 }
