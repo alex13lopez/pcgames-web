@@ -64,6 +64,8 @@ body {
 
 .welcome {
     position: relative;
+    margin: 0;    
+    padding: 0;
     float: left;
     height: 100%;
     width: 20%;
@@ -72,10 +74,24 @@ body {
 .welcome span {
     position: relative;
     display: block;
-    color: #d5f4e6;
-    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
     text-align: center;
-    top: 10%;
+    color: #d5f4e6;
+    font-size: larger;
+}
+
+@media only screen and (min-width: 1080px) {
+    .welcome span {
+        position: relative;
+        display: block;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        color: #d5f4e6;
+        font-size: x-large;
+        top: 10%;
+    }
 }
 
 .buttons {

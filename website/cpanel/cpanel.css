@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: block;
+    height: 80%;
+    width: 98%;
+}
+
+.cpanel {
+    display: block;
+    margin: 0 auto;
+    height: 70%;
+    width: 49%;
+    margin-top: 10%;
+}
+
+.profile {
+    display: block;
+    float: left;
+    margin: 0 auto;
+    height: 50%;
+    width: 50%;
+    border: 2px solid red;
+}
+
+.more {
+    display: block;
+    float: left;
+    margin: 0 auto;
+    height: 50%;
+    width: 50%;
+    border: 2px solid green;
+}
+
+.userManagement {
+    display: block;
+    margin: 0 auto;
+    float: left;
+    clear: both;
+    height: 50%;
+    width: 50%;
+    border: 2px solid blueviolet;
+}
+
+.gameManagement {
+    display: block;
+    margin: 0 auto;
+    float: left;
+    height: 50%;
+    width: 50%;
+    border: 2px solid yellow;
+}
+
+.gameManagement2 {
+    display: block;
+    margin: 0 auto;
+    clear: both;
+    height: 50%;
+    width: 100%;
+    border: 2px solid blue;
+}

@@ -20,7 +20,7 @@
                 session_start();
 
                 if (isset($_SESSION["id"])) {
-                    echo "<span> Welcome "."</span>";
+                    echo "<span> Welcome </span>";
                     echo "<span>".$_SESSION["user"]."</span>";
                 }
             ?>
@@ -35,15 +35,16 @@
             }
             else {
                 echo "<div class='buttons'>";
-                echo "<a href='http://www.pcgames.com/modules/login/logout.php' target='_parent'><input type=\"button\" value=\"Logout\"></a>";
-                echo "<a href=\"http://www.pcgames.com/website/user_panel.php\" target='body_frame'><input type=\"button\" value=\"Control Panel\"></a>";
+                echo "<div class='but1'><a href='http://www.pcgames.com/modules/login/logout.php' target='_parent'><input type=\"button\" value=\"Logout\"></a></div>";
+                echo "<div class='but2'><a href=\"http://www.pcgames.com/website/cpanel/cpanel.php\" target='body_frame'><input type=\"button\" value=\"CPanel\"></a></div>";
                 echo "</div>";
             }
         ?>
         
     </div>
     <div class="body">
-        <iframe src="website/default-web.php" name="body_frame"></iframe>
+        <iframe src="website/default-web/default-web.php" name="body_frame"></iframe>
+        <!-- <iframe src="website/cpanel/cpanel.php" name="body_frame"></iframe> -->
     </div>
 </body>
 </html>

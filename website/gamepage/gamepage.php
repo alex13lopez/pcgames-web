@@ -30,7 +30,7 @@
     </div>
     <div class="gamecover">
     <?php
-        echo "<img src='../IMG/$_GET[id]'>"
+        echo "<img src='/IMG/$_GET[id]'>"
     ?>
     </div>    
     <div class="gameinfo">

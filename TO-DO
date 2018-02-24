@@ -5,3 +5,4 @@
 - Make welcome to users less fugly
 - Anti sqli queries
 - Add more games to DB
+- WAY TOO IMPORTANT : FIX BUG WHEN PASSWORDS DO NOT MATCH AT SIGN UP

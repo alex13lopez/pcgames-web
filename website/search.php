@@ -46,7 +46,7 @@
             <th>Type</th>    
         <?php
         while ($row=mysqli_fetch_array($qresult)) {
-            echo '<tr><td>'."<a href='http://www.pcgames.com/website/gamepage.php?id=$row[id]'>".$row["title"].'</a></td>';
+            echo '<tr><td>'."<a href='http://www.pcgames.com/website/gamepage/gamepage.php?id=$row[id]'>".$row["title"].'</a></td>';
             echo '<td>'.$row["platform"].'</td>';
             echo '<td>'.$row["type"].'</td></tr>';
         }
