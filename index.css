@@ -54,12 +54,18 @@ body {
 .searchbar input {
     height: 2.375em;
     width: 99%;
-    margin-top: 1.45em;
+    margin-top: 2.6%;
     padding: 0.5em;
     border: 0.125em solid black;
     background-color: rgb(61, 68, 73);
     color: #d5f4e6;
     font-weight: bold;
+}
+
+@media only screen and  (min-width: 1920px) {
+    .searchbar input {
+        margin-top: 5%;
+    }
 }
 
 .welcome {
@@ -72,27 +78,18 @@ body {
 }
 
 .welcome span {
-    position: relative;
     display: block;
-    margin: 0;
-    padding: 0;
     text-align: center;
     color: #d5f4e6;
     font-size: larger;
 }
 
-@media only screen and (min-width: 1080px) {
-    .welcome span {
-        position: relative;
-        display: block;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        color: #d5f4e6;
-        font-size: x-large;
-        top: 10%;
-    }
+@media only screen and (min-width: 1920px) {
+    .welcome span { 
+        font-size: xx-large;     
+     }
 }
+
 
 .buttons {
     position: relative;
@@ -153,5 +150,4 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     transition: background-color 5000s ease-in-out 0s;
-    /* -webkit-text-fill-color: #cc8379 !important; */
 }

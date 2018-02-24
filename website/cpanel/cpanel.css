@@ -5,12 +5,14 @@
 html {
     height: 100%;
     width: 100%;
+    overflow: hidden;
 }
 
 body {
     display: block;
     height: 80%;
     width: 98%;
+    overflow: hidden;
 }
 
 .cpanel {
@@ -69,7 +71,7 @@ body {
     clear: both;
     height: 50%;
     width: 100%;
-    border: 2px solid rgb(75, 187, 93);
+    border: 2px solid rgb(128, 219, 173);
 }
 
 span {
@@ -80,8 +82,28 @@ span {
     color: rgb(111, 109, 211);
 }
 
+a {
+    text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) {
+    span {
+        margin-top: 22%;
+    }
+
+    .gameManagement2 span {
+        margin-top: 10%;
+    }
+
+}
+
 @media only screen and (min-width: 1080px) {
     span {
         margin-top: 25%;
     }
+    
+    .gameManagement2 span {
+        margin-top: 12%;
+    }
 }
+
