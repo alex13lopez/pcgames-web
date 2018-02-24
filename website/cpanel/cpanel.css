@@ -49,6 +49,10 @@ body {
     border: 2px solid blueviolet;
 }
 
+.cpanel div:hover {
+    background-color: rgb(151, 148, 148);
+}
+
 .gameManagement {
     display: block;
     margin: 0 auto;
