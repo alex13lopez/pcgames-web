@@ -12,7 +12,6 @@ html {
 body {
     height: 97%;
     width: 98%;
-    border: 1px solid rgb(0, 204, 255);
 }
 
 span {
@@ -23,13 +22,49 @@ span {
     color: rgb(111, 109, 211);
 }
 
+/* .searchbar {
+    display: block;
+    margin: 0 auto;
+
+    padding: 1%;
+    width: 18%;
+    padding-left: 1.1%;
+} */
+
+input {
+    height: 5%;
+    width: 99%;
+    margin: 0.5%;
+    padding: 2.5%;
+    border: 0.125em solid black;
+    background-color: rgb(61, 68, 73);
+    color: #d5f4e6;
+    font-weight: bold;
+}
+
+input[value="UPDATE"] {
+    display: block;
+    margin: 0;
+    width: 48%;
+    float: left;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+}
+
+input[value="ABORT"] {
+    display: block;
+    margin: 0;
+    width: 48%;
+    float: left;
+    margin-left: 2.5%;    
+}
+
 .centro {
     display: block;
     margin: 0 auto;
     margin-top: 10%;
     height: 70%;
     width: 50%;
-    border: 1px solid black;
 }
 
 @media only screen and (min-width: 1366px) {

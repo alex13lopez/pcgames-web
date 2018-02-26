@@ -25,8 +25,10 @@
             exit;
         }
 
+        // $search = $_GET["search"];
         $_GET["gameid"] = "3";
-        if (!$_GET["gameid"]) { 
+        
+        if ($search && !$_GET["gameid"]) { 
 
             $connect = mysqli_connect("localhost", "root", "Abc@1234!", "pcgames");
 
@@ -51,7 +53,7 @@
             echo "</table>";
             mysqli_close($connect);
         }
-        else {
+        else if ($_GET["gameid"]) {
             $connect = mysqli_connect("localhost", "root", "Abc@1234!", "pcgames");
 
             $query = "SELECT * FROM games WHERE id = $_GET[gameid]";
@@ -62,7 +64,8 @@
             echo "\t<div class='centro'>\n";
             echo "\t\t\t<form action='#' method='POST'>\n";
             foreach ($re as $key => $value) {
-                echo "\t\t\t\t<input type='text' name='$key' placeholder='$value' required><br>\n";
+                $key = strtoupper($key);
+                echo "\t\t\t\t<input type='text' name='$key' placeholder='$key: $value' required><br>\n";
             }
             echo "\t\t\t\t<input type='submit' value='UPDATE' name='update'>\n";
             echo "\t\t\t\t<input type='submit' value='ABORT' name='abort'>\n";
@@ -70,7 +73,9 @@
             echo "\t</div>\n";
 
 
-            // unset($_GET["gameid"]);
+            unset($_GET["gameid"]);
+            unset($search);
+            mysqli_close($connect);
         }
     ?>
 </body>
