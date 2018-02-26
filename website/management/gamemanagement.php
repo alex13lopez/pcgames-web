@@ -25,9 +25,19 @@
             exit;
         }
 
-        // $search = $_GET["search"];
-        $_GET["gameid"] = "3";
-        
+        ?>
+        <div class='choose'>
+            <div class="searchbar">
+                <form action="#" method="GET" target="body_frame">
+                    <input type="text" name="search" placeholder="Search games to edit">
+                </form>
+            </div>
+        </div>
+
+        <?php
+       
+       $search = $_GET["search"];
+
         if ($search && !$_GET["gameid"]) { 
 
             $connect = mysqli_connect("localhost", "root", "Abc@1234!", "pcgames");
@@ -64,18 +74,50 @@
             echo "\t<div class='centro'>\n";
             echo "\t\t\t<form action='#' method='POST'>\n";
             foreach ($re as $key => $value) {
-                $key = strtoupper($key);
-                echo "\t\t\t\t<input type='text' name='$key' placeholder='$key: $value' required><br>\n";
+                if (strcmp($key, "id") != 0) { 
+                    $key = strtoupper($key);
+                    echo "\t\t\t\t<input type='text' name='$key' placeholder='$key: $value'><br>\n";
+                }
             }
-            echo "\t\t\t\t<input type='submit' value='UPDATE' name='update'>\n";
             echo "\t\t\t\t<input type='submit' value='ABORT' name='abort'>\n";
+            echo "\t\t\t\t<input type='submit' value='UPDATE' name='update'>\n";
             echo "\t\t\t</form>\n";
             echo "\t</div>\n";
 
+            if (isset($_POST['update'])) {
+                if (empty($_POST["TITLE"])) {
+                    $_POST["TITLE"] = $re["title"];
+                }
+                if (empty($_POST["PLATFORM"])) {
+                    $_POST["PLATFORM"] = $re["platform"];
+                }
+                if (empty($_POST["PRICE"])) {
+                    $_POST["PRICE"] = $re["price"];
+                }
+                if (empty($_POST["REGION"])) {
+                    $_POST["REGION"] = $re["region"];
+                }
+                if (empty($_POST["TYPE"])) {
+                    $_POST["TYPE"] = $re["type"];
+                }
 
-            unset($_GET["gameid"]);
-            unset($search);
-            mysqli_close($connect);
+                $uquery = "UPDATE games SET title = '$_POST[TITLE]', platform = '$_POST[PLATFORM]', price = '$_POST[PRICE]', region = '$_POST[REGION]', type = '$_POST[TYPE]' WHERE id = $re[id]";
+
+                mysqli_query($connect, $uquery);
+
+                unset($_GET["gameid"]);
+                unset($search);
+                mysqli_close($connect);
+
+                echo "<span class='successful>GAME UPDATED SUCCESSFULLY!</span>'";
+                header("refresh: 1; url=gamemanagement.php");
+            }
+            else if (isset($_POST['abort'])) {
+                unset($_GET["gameid"]);
+                unset($search);
+                mysqli_close($connect);
+                header("refresh: 0; url=gamemanagement.php");
+            }
         }
     ?>
 </body>

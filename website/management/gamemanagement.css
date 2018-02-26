@@ -22,14 +22,14 @@ span {
     color: rgb(111, 109, 211);
 }
 
-/* .searchbar {
+.searchbar {
     display: block;
     margin: 0 auto;
 
     padding: 1%;
     width: 18%;
     padding-left: 1.1%;
-} */
+}
 
 input {
     height: 5%;
@@ -42,7 +42,7 @@ input {
     font-weight: bold;
 }
 
-input[value="UPDATE"] {
+input[value="ABORT"] {
     display: block;
     margin: 0;
     width: 48%;
@@ -51,12 +51,18 @@ input[value="UPDATE"] {
     margin-right: 0.5%;
 }
 
-input[value="ABORT"] {
+input[value="UPDATE"] {
     display: block;
     margin: 0;
     width: 48%;
     float: left;
-    margin-left: 2.5%;    
+    margin-left: 2.5%;
+    
+}
+
+input[type="submit"]:hover {
+    color: black;
+    background-color: rgb(151, 148, 148);
 }
 
 .centro {
