@@ -38,7 +38,7 @@ body {
     margin: 0 auto;
     height: 50%;
     width: 50%;
-    border: 2px solid rgb(113, 127, 204);
+    border: 2px solid rgb(113, 163, 204);
 }
 
 .userManagement {
@@ -101,7 +101,7 @@ a {
     span {
         margin-top: 25%;
     }
-    
+
     .gameManagement2 span {
         margin-top: 12%;
     }

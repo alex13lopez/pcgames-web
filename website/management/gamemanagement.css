@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    overflow: hidden;  
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 97%;
+    width: 98%;
+    border: 1px solid rgb(0, 204, 255);
+}
+
+span {
+    display: block;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    color: rgb(111, 109, 211);
+}
+
+.centro {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10%;
+    height: 70%;
+    width: 50%;
+    border: 1px solid black;
+}
+
+@media only screen and (min-width: 1366px) {
+    body {
+        height: 98%;
+        width: 99%;
+    }
+    .centro {
+        margin-top: 8%;
+    }
+}
+
+

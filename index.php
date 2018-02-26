@@ -12,7 +12,7 @@
         </div>
         <div class="searchbar">
             <form action="website/search.php" method="GET" target="body_frame">
-                <input type="text" name="search" placeholder="Search">
+                <input type="text" name="search" placeholder="Search games">
             </form>
         </div>
         <div class="welcome">
@@ -44,7 +44,7 @@
     </div>
     <div class="body">
         <!-- <iframe src="website/default-web/default-web.php" name="body_frame"></iframe> -->
-        <iframe src="website/cpanel/cpanel.php" name="body_frame"></iframe>
+        <iframe src="website/management/gamemanagement.php" name="body_frame"></iframe>        
     </div>
 </body>
 </html>
