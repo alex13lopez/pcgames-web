@@ -25,25 +25,55 @@
             exit;
         }
 
-        ?>
-        <div class='choose'>
-            <div class="searchbar">
-                <form action="#" method="GET" target="body_frame">
-                    <input type="text" name="search" placeholder="Search games to edit">
-                </form>
-            </div>
-            <div class="add">
-                <form action="#" method="GET">
-                    <input type="button" name="add" value="ADD GAMES">
-                </form>
-            </div>
-        </div>
+        $search = $_GET["search"];
+        $addgame = $_GET["addgame"];
 
-        <?php
-       
-       $search = $_GET["search"];
+        if (empty($addgame)) {
+            echo "<div class='choose'>";
+            echo "<div class='searchbar'>";
+            echo "<form action='#' method='GET' target='body_frame'>";
+            echo "<input type='text' name='search' placeholder='Search games to edit'>";
+            echo "</form>";
+            echo "</div>";
+            echo "<div class='add'>";
+            echo "<a href='gamemanagement.php?addgame=yes'><input type='button' value='Add game'></a>";
+            echo "</div>";
+            echo "</div>";
 
-        if ($search && !$_GET["gameid"]) { 
+        }
+        else if (strcmp("yes", $addgame) == 0) {
+            ?>
+                <form action="#" method="POST">
+                    <input type="text" name="title" placeholder="TITLE">
+                    <input type="text" name="platform" placeholder="PLATFORM">
+                    <input type="text" name="price" placeholder="PRICE">
+                    <input type="text" name="region" placeholder="REGION">
+                    <input type="text" name="type" placeholder="TYPE">
+                    <!-- <input type="text" name="img" placeholder="Put URL of picture here"> -->
+                    <input type="submit" name="submitgame" value="Add game">
+                </form>
+            <?php
+            if (isset($_POST["submitgame"])) {
+                $connect = mysqli_connect("localhost", "root", "Abc@1234!", "pcgames");
+
+                
+                $query = "INSERT INTO games (title, platform, price, region, type) VALUES ('$_POST[title]', '$_POST[platform]', '$_POST[price]', '$_POST[region]', '$_POST[type]')";
+                mysqli_query($connect, $query);
+                
+                // $iquery = "SELECT id from games where title = '$_POST[title]'";
+                // $result = mysqli_query($connect, $iquery);
+                // $gameid = mysql_fetch_assoc($result);
+                // $url = "$_POST[img]";
+
+                // $image = file_get_contents("$url");
+                // file_put_contents('/IMG/image.jpg', $image);
+                
+                echo "<span class='successful>GAME ADDED SUCCESSFULLY!</span>'";
+                mysqli_close($connect);
+                header("refresh: 2; url=gamemanagement.php");
+            }
+        }
+        else if ($search && !$_GET["gameid"]) { 
 
             $connect = mysqli_connect("localhost", "root", "Abc@1234!", "pcgames");
 
