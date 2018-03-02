@@ -32,6 +32,11 @@
                     <input type="text" name="search" placeholder="Search games to edit">
                 </form>
             </div>
+            <div class="add">
+                <form action="#" method="GET">
+                    <input type="button" name="add" value="ADD GAMES">
+                </form>
+            </div>
         </div>
 
         <?php

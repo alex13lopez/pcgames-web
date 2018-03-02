@@ -22,13 +22,33 @@ span {
     color: rgb(111, 109, 211);
 }
 
+.choose {
+    display: block;
+    height: 20%;
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 20%;
+}
+
 .searchbar {
     display: block;
-    margin: 0 auto;
-
+    margin: 0;
     padding: 1%;
-    width: 18%;
-    padding-left: 1.1%;
+    width: 50%;
+    float: left;
+}
+
+.add {
+    display: block;
+    margin: 0;
+    padding: 1%;
+    width: 50%;
+    float: left;
+}
+
+.add:hover {
+    color: black;
+    background-color: rgb(151, 148, 148);
 }
 
 input {
