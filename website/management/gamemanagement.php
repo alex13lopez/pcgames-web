@@ -18,14 +18,12 @@
         }
 
         if (strcmp($_SESSION["roles"], "admin") != 0 && strcmp($_SESSION["roles"], "shopadmin") != 0) {
-            echo "<span>Lo siento pero aquí pone que eres gilipollas!.";            
-            // echo "<span>You are not allowed to be here.";
+            echo "<span>You are not allowed to be here.</span>";
             echo "\n\t</body>";
             echo "\n</html>";
             exit;
         }
 
-        $search = $_GET["search"];
         $addgame = $_GET["addgame"];
 
         if (empty($addgame)) {
@@ -49,31 +47,32 @@
                     <input type="text" name="price" placeholder="PRICE">
                     <input type="text" name="region" placeholder="REGION">
                     <input type="text" name="type" placeholder="TYPE">
-                    <!-- <input type="text" name="img" placeholder="Put URL of picture here"> -->
+                    <input type="text" name="img" placeholder="Put URL of picture here">
                     <input type="submit" name="submitgame" value="Add game">
                 </form>
             <?php
             if (isset($_POST["submitgame"])) {
                 $connect = mysqli_connect("localhost", "root", "Abc@1234!", "pcgames");
 
-                
                 $query = "INSERT INTO games (title, platform, price, region, type) VALUES ('$_POST[title]', '$_POST[platform]', '$_POST[price]', '$_POST[region]', '$_POST[type]')";
                 mysqli_query($connect, $query);
                 
-                // $iquery = "SELECT id from games where title = '$_POST[title]'";
-                // $result = mysqli_query($connect, $iquery);
-                // $gameid = mysql_fetch_assoc($result);
-                // $url = "$_POST[img]";
-
-                // $image = file_get_contents("$url");
-                // file_put_contents('/IMG/image.jpg', $image);
+                $iquery = "SELECT id from games where title = '$_POST[title]'";
+                $result = mysqli_query($connect, $iquery);        
+                $gameid = mysqli_fetch_assoc($result);
+                $url = "$_POST[img]";
+                
+                copy("$url", "../../IMG/$gameid[id]");
                 
                 echo "<span class='successful>GAME ADDED SUCCESSFULLY!</span>'";
                 mysqli_close($connect);
                 header("refresh: 2; url=gamemanagement.php");
             }
         }
-        else if ($search && !$_GET["gameid"]) { 
+
+        $search = $_GET["search"];
+        
+        if ($search && !$_GET["gameid"]) { 
 
             $connect = mysqli_connect("localhost", "root", "Abc@1234!", "pcgames");
 

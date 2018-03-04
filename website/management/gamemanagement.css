@@ -24,10 +24,10 @@ span {
 
 .choose {
     display: block;
-    height: 20%;
+    height: 7%;
     width: 30%;
     margin: 0 auto;
-    margin-top: 20%;
+    margin-top: 18%;
 }
 
 .searchbar {
@@ -87,19 +87,7 @@ input[type="submit"]:hover {
 .centro {
     display: block;
     margin: 0 auto;
-    margin-top: 10%;
-    height: 70%;
+    height: 60%;
     width: 50%;
 }
-
-@media only screen and (min-width: 1366px) {
-    body {
-        height: 98%;
-        width: 99%;
-    }
-    .centro {
-        margin-top: 8%;
-    }
-}
-
 
