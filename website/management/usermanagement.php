@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="gamemanagement.css">
+    <link rel="stylesheet" href="usermanagement.css">
 </head>
 <body>
     <?php
@@ -24,50 +24,47 @@
             exit;
         }
 
-        $addgame = $_GET["addgame"];
+        $adduser = $_GET["adduser"];
 
-        if (empty($addgame)) {
+        if (empty($adduser)) {
             echo "<div class='choose'>";
             echo "<div class='searchbar'>";
             echo "<form action='#' method='GET' target='body_frame'>";
-            echo "<input type='text' name='search' placeholder='Search games to edit'>";
+            echo "<input type='text' name='search' placeholder='Manage users'>";
             echo "</form>";
             echo "</div>";
             echo "<div class='add'>";
-            echo "<a href='gamemanagement.php?addgame=yes'><input type='button' value='Add game'></a>";
+            echo "<a href='usermanagement.php?adduser=yes'><input type='button' value='Add user'></a>";
             echo "</div>";
             echo "</div>";
 
         }
-        else if (strcmp("yes", $addgame) == 0) {
+        else if (strcmp("yes", $adduser) == 0) {
             ?>
                 <div class="addform">
                     <form action="#" method="POST">
-                        <input type="text" name="title" placeholder="TITLE" required>
-                        <input type="text" name="platform" placeholder="PLATFORM">
-                        <input type="text" name="price" placeholder="PRICE" required>
-                        <input type="text" name="region" placeholder="REGION">
-                        <input type="text" name="type" placeholder="TYPE">
-                        <input type="text" name="img" placeholder="Put URL of picture here">
-                        <input type="submit" name="submitgame" value="Add game">
+                        <input type="text" name="email" placeholder="EMAIL" required>
+                        <input type="text" name="user" placeholder="USER" required>
+                        <input type="password" name="passwd" placeholder="PASSWORD" required>
+                        <select name="role" required>
+                            <option value="user" selected>USER</option>
+                            <option value="shopadmin">SHOPADMIN</option>
+                            <option value="admin">ADMIN</option>
+                        </select>
+                        <input type="submit" name="submituser" value="Add user">
                     </form>
                 </div>
             <?php
-            if (isset($_POST["submitgame"])) {
+            if (isset($_POST["submituser"])) {
                 $connect = mysqli_connect("localhost", "root", "Abc@1234!", "pcgames");
 
-                $query = "INSERT INTO games (title, platform, price, region, type) VALUES ('$_POST[title]', '$_POST[platform]', '$_POST[price]', '$_POST[region]', '$_POST[type]')";
-                mysqli_query($connect, $query);
-                
-                $iquery = "SELECT id from games where title = '$_POST[title]'";
-                $result = mysqli_query($connect, $iquery);        
-                $gameid = mysqli_fetch_assoc($result);
-                $url = "$_POST[img]";
-                
-                copy("$url", "../../IMG/$gameid[id]");
-                
+                $hashed_pass = password_hash($_POST["passwd"], PASSWORD_DEFAULT);
+
+                $query = "INSERT INTO users (email, user, passwd, roles) VALUES ('$_POST[email]', '$_POST[user]', '$hashed_pass', '$_POST[role]')";
+                $result = mysqli_query($connect, $query);
+
                 mysqli_close($connect);
-                header("refresh: 0; url=gamemanagement.php");
+                header("refresh: 0; url=usermanagement.php");
             }
         }
 

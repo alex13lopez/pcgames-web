@@ -62,13 +62,26 @@ input {
 }
 
 .addform {
-    height: 70%;
+    height: 50%;
     width: 50%;
     margin: 0 auto;
 }
 
 .addform input {
     height: 7.5vh;
+}
+
+select {
+    display: block;
+    height: 7.5vh;
+    width: 99%;
+    margin: 0.5%;
+    padding: 0.5%;
+    border: 0.125em solid black;
+    color: #d5f4e6;
+    background-color: rgb(61, 68, 73); 
+    font-weight: bold;
+    text-align: center;
 }
 
 input[value="ABORT"] {
