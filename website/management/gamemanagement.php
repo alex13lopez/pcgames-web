@@ -77,7 +77,7 @@
 
             $connect = mysqli_connect("localhost", "root", "Abc@1234!", "pcgames");
 
-            $query = "SELECT * FROM games WHERE Match(title) AGAINST ('\"$search\"' IN BOOLEAN MODE) ORDER BY title LIMIT 5";
+            $query = "SELECT * FROM games WHERE Match(title) AGAINST ('\"$search\"' IN BOOLEAN MODE) ORDER BY title";
             $result = mysqli_query($connect, $query);
 
             ?>

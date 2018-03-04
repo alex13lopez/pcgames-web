@@ -70,87 +70,83 @@
 
         $search = $_GET["search"];
         
-        if ($search && !$_GET["gameid"]) { 
+        if ($search && !$_GET["userid"]) { 
 
             $connect = mysqli_connect("localhost", "root", "Abc@1234!", "pcgames");
 
-            $query = "SELECT * FROM games WHERE Match(title) AGAINST ('\"$search\"' IN BOOLEAN MODE) ORDER BY title LIMIT 5";
+            $query = "SELECT * FROM users WHERE Match(user, email) AGAINST ('$search*' IN BOOLEAN MODE) ORDER BY user";
             $result = mysqli_query($connect, $query);
 
             ?>
             
-            <table class="gamestable" align="center">
-            <?php echo "<tr><th colspan='5'><center>FOUND GAMES IN DB MATCHING '$search'</center></th></tr>" ?>
+            <table class="usertable" align="center">
+            <?php echo "<tr><th colspan='5'><center>FOUND USERS IN DB MATCHING '$search'</center></th></tr>" ?>
             <tr>
-                <th>Game</th>
-                <th>Platform</th>
-                <th>Type</th>    
+                <th>Email</th>
+                <th>User</th>
             <?php
             while ($row = mysqli_fetch_array($result)) {
-                echo '<tr><td>'."<a href='gamemanagement.php?gameid=$row[id]'>".$row["title"].'</a></td>';
-                echo '<td>'.$row["platform"].'</td>';
-                echo '<td>'.$row["type"].'</td></tr>';
+                echo '<tr><td>'."<a href='usermanagement.php?userid=$row[id]'>".$row["email"].'</a></td>';
+                echo '<td>'.$row["user"].'</td></tr>';
             }
 
             echo "</table>";
             mysqli_close($connect);
         }
-        else if ($_GET["gameid"]) {
+        else if ($_GET["userid"]) {
             $connect = mysqli_connect("localhost", "root", "Abc@1234!", "pcgames");
 
-            $query = "SELECT * FROM games WHERE id = $_GET[gameid]";
+            $query = "SELECT * FROM users WHERE id = $_GET[userid]";
             $result = mysqli_query($connect, $query);
 
             $re = mysqli_fetch_assoc($result);
 
             echo "\t<div class='centro'>\n";
             echo "\t\t\t<form action='#' method='POST'>\n";
-            foreach ($re as $key => $value) {
-                if (strcmp($key, "id") != 0) { 
-                    $key = strtoupper($key);
-                    echo "\t\t\t\t<input type='text' name='$key' placeholder='$key: $value'><br>\n";
-                }
-            }
-            echo "\t\t\t\t<input type='text' name='newurl' placeholder='Update game cover'>\n";
+            echo "\t\t\t\t<input type='text' name='EMAIL' placeholder='EMAIL: $re[email]'>\n";
+            echo "\t\t\t\t<input type='password' name='USER' placeholder='USER: $re[user]'>\n";
+            echo "\t\t\t\t<select name='ROLES'>\n";
+            echo "\t\t\t\t\t\<option value='user'>USER</option>";
+            echo "\t\t\t\t\t\<option value='shopadmin'>SHOPADMIN</option>";
+            echo "\t\t\t\t\t\<option value='admin'>ADMIN</option>";
+            echo "\t\t\t\t</select>\n";
+            echo "\t\t\t\t<input type='password' name='PASSWD' placeholder='PASSWORD'>\n";
             echo "\t\t\t\t<input type='submit' value='ABORT' name='abort'>\n";
             echo "\t\t\t\t<input type='submit' value='UPDATE' name='update'>\n";
             echo "\t\t\t</form>\n";
             echo "\t</div>\n";
 
             if (isset($_POST['update'])) {
-                if (empty($_POST["TITLE"])) {
-                    $_POST["TITLE"] = $re["title"];
+                if (empty($_POST["EMAIL"])) {
+                    $_POST["EMAIL"] = $re["email"];
                 }
-                if (empty($_POST["PLATFORM"])) {
-                    $_POST["PLATFORM"] = $re["platform"];
+                if (empty($_POST["USER"])) {
+                    $_POST["USER"] = $re["user"];
                 }
-                if (empty($_POST["PRICE"])) {
-                    $_POST["PRICE"] = $re["price"];
+                if (empty($_POST["PASSWD"])) {
+                    $_POST["PASSWD"] = $re["passwd"];
                 }
-                if (empty($_POST["REGION"])) {
-                    $_POST["REGION"] = $re["region"];
-                }
-                if (empty($_POST["TYPE"])) {
-                    $_POST["TYPE"] = $re["type"];
+                if (empty($_POST["ROLES"])) {
+                    $_POST["ROLES"] = $re["roles"];
                 }
 
-                copy("$_POST[newurl]", "../../IMG/$re[id]");
+                $hashed_pass = password_hash($_POST["PASSWD"], PASSWORD_DEFAULT);
 
-                $uquery = "UPDATE games SET title = '$_POST[TITLE]', platform = '$_POST[PLATFORM]', price = '$_POST[PRICE]', region = '$_POST[REGION]', type = '$_POST[TYPE]' WHERE id = $re[id]";
-
+                $uquery = "UPDATE users SET email = '$_POST[EMAIL]', user = '$_POST[USER]', passwd = '$hashed_pass', roles = '$_POST[ROLES]' WHERE id = $re[id]";
+                
                 mysqli_query($connect, $uquery);
 
-                unset($_GET["gameid"]);
+                unset($_GET["userid"]);
                 unset($search);
                 mysqli_close($connect);
 
-                header("refresh: 0; url=gamemanagement.php");
+                header("refresh: 0; url=usermanagement.php");
             }
             else if (isset($_POST['abort'])) {
-                unset($_GET["gameid"]);
+                unset($_GET["userid"]);
                 unset($search);
                 mysqli_close($connect);
-                header("refresh: 0; url=gamemanagement.php");
+                header("refresh: 0; url=usermanagement.php");
             }
         }
     ?>

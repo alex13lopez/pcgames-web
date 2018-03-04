@@ -120,6 +120,11 @@ body {
     right: 0;
 }
 
+.buttons input:hover{
+    color: black;
+    background-color: rgb(151, 148, 148);
+}
+
 .buttons input {
     height: 100%;
     width: 100%;
