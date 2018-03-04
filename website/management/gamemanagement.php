@@ -56,6 +56,16 @@
             if (isset($_POST["submitgame"])) {
                 $connect = mysqli_connect("localhost", "root", "Abc@1234!", "pcgames");
 
+                if (empty($_POST["platform"])) {
+                    $_POST["PLATFORM"] = "Steam";
+                }
+                if (empty($_POST["REGION"])) {
+                    $_POST["REGION"] = "GLOBAL";
+                }
+                if (empty($_POST["TYPE"])) {
+                    $_POST["TYPE"] = "Key";
+                }
+
                 $query = "INSERT INTO games (title, platform, price, region, type) VALUES ('$_POST[title]', '$_POST[platform]', '$_POST[price]', '$_POST[region]', '$_POST[type]')";
                 mysqli_query($connect, $query);
                 
