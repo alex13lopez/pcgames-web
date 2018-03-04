@@ -64,9 +64,8 @@
                 
                 copy("$url", "../../IMG/$gameid[id]");
                 
-                echo "<span class='successful>GAME ADDED SUCCESSFULLY!</span>'";
                 mysqli_close($connect);
-                header("refresh: 3; url=gamemanagement.php");
+                header("refresh: 0; url=gamemanagement.php");
             }
         }
 
@@ -146,8 +145,7 @@
                 unset($search);
                 mysqli_close($connect);
 
-                echo "<span class='successful>GAME ADDED SUCCESSFULLY!</span>'";
-                header("refresh: 3; url=gamemanagement.php");
+                header("refresh: 0; url=gamemanagement.php");
             }
             else if (isset($_POST['abort'])) {
                 unset($_GET["gameid"]);

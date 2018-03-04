@@ -43,8 +43,8 @@
         
     </div>
     <div class="body">
-        <!-- <iframe src="website/default-web/default-web.php" name="body_frame"></iframe> -->
-        <iframe src="website/management/gamemanagement.php" name="body_frame"></iframe>        
+        <iframe src="website/default-web/default-web.php" name="body_frame"></iframe>
+        <!-- <iframe src="website/management/gamemanagement.php" name="body_frame"></iframe>         -->
     </div>
 </body>
 </html>
