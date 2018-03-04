@@ -66,7 +66,7 @@
                 
                 echo "<span class='successful>GAME ADDED SUCCESSFULLY!</span>'";
                 mysqli_close($connect);
-                header("refresh: 2; url=gamemanagement.php");
+                header("refresh: 3; url=gamemanagement.php");
             }
         }
 
@@ -113,6 +113,7 @@
                     echo "\t\t\t\t<input type='text' name='$key' placeholder='$key: $value'><br>\n";
                 }
             }
+            echo "\t\t\t\t<input type='text' name='newurl' placeholder='Update game cover'>\n";
             echo "\t\t\t\t<input type='submit' value='ABORT' name='abort'>\n";
             echo "\t\t\t\t<input type='submit' value='UPDATE' name='update'>\n";
             echo "\t\t\t</form>\n";
@@ -135,6 +136,8 @@
                     $_POST["TYPE"] = $re["type"];
                 }
 
+                copy("$_POST[newurl]", "../../IMG/$re[id]");
+
                 $uquery = "UPDATE games SET title = '$_POST[TITLE]', platform = '$_POST[PLATFORM]', price = '$_POST[PRICE]', region = '$_POST[REGION]', type = '$_POST[TYPE]' WHERE id = $re[id]";
 
                 mysqli_query($connect, $uquery);
@@ -143,8 +146,8 @@
                 unset($search);
                 mysqli_close($connect);
 
-                echo "<span class='successful>GAME UPDATED SUCCESSFULLY!</span>'";
-                header("refresh: 1; url=gamemanagement.php");
+                echo "<span class='successful>GAME ADDED SUCCESSFULLY!</span>'";
+                header("refresh: 3; url=gamemanagement.php");
             }
             else if (isset($_POST['abort'])) {
                 unset($_GET["gameid"]);
