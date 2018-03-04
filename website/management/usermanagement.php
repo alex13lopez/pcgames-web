@@ -10,7 +10,7 @@
         session_start();
 
         if (!$_SESSION["id"]) {
-            echo "<span>You're not logged in. Please <a href='/modules/login/login.html'>log in.</a></span>";
+            echo "<span>You're not logged in. Please <a href='/modules/login/login.php'>log in.</a></span>";
             echo "\n\t</body>";
             echo "\n</html>";
             exit;

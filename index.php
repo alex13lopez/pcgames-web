@@ -29,8 +29,8 @@
         <?php 
             if (! isset($_SESSION["id"])) {
                 echo "<div class=\"buttons\">";
-                        echo "<div class='but1'><a href='http://www.pcgames.com/modules/login/login.html' target=\"body_frame\"><input type=\"button\" value=\"Login\"></a></div>";
-                        echo "<div class='but2'><a href=\"http://www.pcgames.com/modules/registration/register.html\" target=\"body_frame\"><input type=\"button\" value=\"Sign up\"></a></div>";
+                        echo "<div class='but1'><a href='http://www.pcgames.com/modules/login/login.php' target=\"body_frame\"><input type=\"button\" value=\"Login\"></a></div>";
+                        echo "<div class='but2'><a href=\"http://www.pcgames.com/modules/registration/register.php\" target=\"body_frame\"><input type=\"button\" value=\"Sign up\"></a></div>";
                 echo "</div>";
             }
             else {

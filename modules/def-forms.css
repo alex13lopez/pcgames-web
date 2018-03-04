@@ -3,21 +3,20 @@
 }
 
 html, body {
-    width: 90%;
-    height: 70%;
     margin: 0 auto;
+    background-color: rgb(61, 68, 73);
 }
 
 .center {
-    width: 50%;
-    height: 50%;
-    margin-top: 18%;
-    margin-left: 26%;
+    width: 45%;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 10%;
 }
 
 input {
-    width: 100%;
-    height: 4.85em;
+    width: 99%;
+    height: 8vh;
     display: inline-block;
     margin: 0.6px;
     padding: 1em;
@@ -25,4 +24,12 @@ input {
     background-color: rgb(61, 68, 73);
     color: #d5f4e6;
     font-weight: bold;
+}
+
+.err {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 2%;
+    color: rgb(245, 28, 28);
+    font-size: 1.5em;
 }
