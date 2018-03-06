@@ -17,7 +17,7 @@
                 }
             
                 echo "<div class='cpanel'>";
-                echo "<a href='../profile/profile.php?id=$_SESSION[id]'><div class='profile'><span>Profile<span></div></a>";
+                echo "<a href='../profile/profile.php'><div class='profile'><span>Profile<span></div></a>";
                 echo "<div class='more'><span>Coming soon!</span></div>";
                 if (strcmp($_SESSION["roles"], "admin") == 0) {
                     echo "<a href='../management/usermanagement.php'><div class='userManagement'><span>Manage Users<span></div></a>";                    

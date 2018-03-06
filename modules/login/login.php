@@ -26,7 +26,7 @@
             session_start();
             
             $_SESSION["login"] = $_POST["login"];
-            $_SESSION["pass"] = $_POST["pass"];
+            $pass = $_POST["pass"];
             
             
             $connect = mysqli_connect("localhost", "root", "Abc@1234!", "pcgames");
@@ -39,7 +39,6 @@
             }
             
             $login = $_SESSION["login"];
-            $pass = $_SESSION["pass"];
             
             if (preg_match("/^.*@.*\.[[:alpha:]][[:alpha:]]+/", "$login")) {
                 # Is the login an email? 
