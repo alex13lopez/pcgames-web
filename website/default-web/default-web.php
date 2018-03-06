@@ -46,7 +46,7 @@
         while ($query_row = mysqli_fetch_array($result)) { 
             echo "<div class='column'>";
             echo "<div class='gametitle'><span>".$query_row["title"]."</span></div>";
-            echo "<div class='cover'><a href='http://www.pcgames.com/website/gamepage/gamepage.php?id=$query_row[id]'><img src='/IMG/$query_row[id]'></a></div>";
+            echo "<div class='cover'><a href='/website/gamepage/gamepage.php?id=$query_row[id]'><img src='/IMG/$query_row[id]'></a></div>";
             echo "</div>";        
             }     
         echo "</div>";

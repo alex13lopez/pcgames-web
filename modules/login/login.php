@@ -64,7 +64,7 @@
                 $_SESSION["id"] = $re["id"];
                 $_SESSION["roles"] = $re["roles"];
                 $_SESSION["user"] = $re["user"];
-                echo "<script>top.window.location = 'http://www.pcgames.com'</script>";
+                echo "<script>top.window.location = '/index.php'</script>";
             }
             else {
                 header("refresh: 0, url=login.php?err=yes");

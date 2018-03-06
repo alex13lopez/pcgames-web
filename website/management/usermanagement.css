@@ -62,9 +62,11 @@ input {
 }
 
 .addform {
+    display: block;
     height: 50%;
     width: 50%;
     margin: 0 auto;
+    margin-top: 12%;
 }
 
 .addform input {

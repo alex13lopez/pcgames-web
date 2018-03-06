@@ -8,7 +8,7 @@
 <body>
     <div class="header">
         <div class="logo">
-            <a href="http://www.pcgames.com"><img src="LOGO/logo3.png" alt="logo.png"></a>
+            <a href="/index.php"><img src="LOGO/logo3.png" alt="logo.png"></a>
         </div>
         <div class="searchbar">
             <form action="website/search.php" method="GET" target="body_frame">
@@ -29,14 +29,14 @@
         <?php 
             if (! isset($_SESSION["id"])) {
                 echo "<div class=\"buttons\">";
-                        echo "<div class='but1'><a href='http://www.pcgames.com/modules/login/login.php' target=\"body_frame\"><input type=\"button\" value=\"Login\"></a></div>";
-                        echo "<div class='but2'><a href=\"http://www.pcgames.com/modules/registration/register.php\" target=\"body_frame\"><input type=\"button\" value=\"Sign up\"></a></div>";
+                        echo "<div class='but1'><a href='/modules/login/login.php' target=\"body_frame\"><input type=\"button\" value=\"Login\"></a></div>";
+                        echo "<div class='but2'><a href=\"/modules/registration/register.php\" target=\"body_frame\"><input type=\"button\" value=\"Sign up\"></a></div>";
                 echo "</div>";
             }
             else {
                 echo "<div class='buttons'>";
-                echo "<div class='but1'><a href='http://www.pcgames.com/modules/login/logout.php' target='_parent'><input type=\"button\" value=\"Logout\"></a></div>";
-                echo "<div class='but2'><a href=\"http://www.pcgames.com/website/cpanel/cpanel.php\" target='body_frame'><input type=\"button\" value=\"CPanel\"></a></div>";
+                echo "<div class='but1'><a href='/modules/login/logout.php' target='_parent'><input type=\"button\" value=\"Logout\"></a></div>";
+                echo "<div class='but2'><a href=\"/website/cpanel/cpanel.php\" target='body_frame'><input type=\"button\" value=\"CPanel\"></a></div>";
                 echo "</div>";
             }
         ?>

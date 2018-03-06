@@ -80,7 +80,7 @@
                 $ERROR = TRUE;
             }
             else if ($registered == 1) {
-                echo "<span class='err'>The email is already registered. Do you have an account already? <a href='http://www.pcgames.com/modules/login/login.php'>Login</a></span>";
+                echo "<span class='err'>The email is already registered. Do you have an account already? <a href='/modules/login/login.php'>Login</a></span>";
                 $ERROR = TRUE;
             }
             else if ($registered == 2) {
@@ -110,7 +110,7 @@
             mysqli_close($link);
             session_destroy();
             
-            echo "<script>top.window.location = 'http://www.pcgames.com'</script>";
+            echo "<script>top.window.location = '/index.php'</script>";
         }
     ?>
         <form action="#" method="post">
