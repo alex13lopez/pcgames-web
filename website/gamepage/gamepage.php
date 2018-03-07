@@ -46,6 +46,12 @@
                 echo "<span class='ty-type'>".$game["type"]."</span>"
             ?>
         </div>
+        <div class="region">
+            <?php
+                echo "<span class='re-title'>Region</span>";            
+                echo "<span class='re-type'>".$game["region"]."</span>"
+            ?>
+        </div>
         <div class="price">
             <?php
                 echo "<span class='pr-title'>Price</span>";            
