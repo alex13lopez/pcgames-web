@@ -7,6 +7,8 @@
 </head>
 <body>
     <?php
+        session_start();
+
         $connect = mysqli_connect("localhost", "root", "Abc@1234!", "pcgames");
 
         if (!$connect) {
@@ -59,7 +61,15 @@
             ?>
         </div>    
         <div class="wishlist">
-            <a href=""><div class="wishbutton"><img src="/IMG/wishlist.png" alt="Add game to Wishlist"></div></a>
+            <?php
+                if (!empty($_SESSION["id"])) { 
+                    echo "<a href='gamepage.php?id=$_GET[id]&add=true'><div class='wishbutton'><img src='/IMG/wishlist.png' alt='Add game to Wishlist'></div></a>";
+                }
+                else {
+                    echo "<span class='top'>You must be registered in order</span>";
+                    echo "<span>to add a game to your wishlist</span>";
+                }
+            ?>
         </div>   
     </div>
     <div class="description">
@@ -70,5 +80,21 @@
             echo "<span class='descr'>".$loremipsum."</span>";
         ?>
     </div>
+
+    <?php
+        if (strcmp($_GET["add"], "true") == 0) {
+            $connect = mysqli_connect("localhost", "root", "Abc@1234!", "pcgames");
+
+            $wquery = "SELECT wishlist FROM users WHERE id = $_SESSION[id]";
+            $wresult = mysqli_query($connect, $wquery);
+            $wishlist = mysqli_fetch_assoc($wresult)["wishlist"];
+
+            $wishlist = $wishlist.",".$_GET["id"];
+
+            $uquery = "UPDATE users SET wishlist = '$wishlist' WHERE id = $_SESSION[id]";
+
+            mysqli_query($connect, $uquery);
+        }
+    ?>
 </body>
 </html>
