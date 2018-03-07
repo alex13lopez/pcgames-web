@@ -101,8 +101,8 @@
 
 
             unset($_GET["add"]);
-            header("refresh: 0, url=gamepage.php?id=$_GET[id]");
             mysqli_query($connect, $uquery);
+            header("refresh: 0, url=gamepage.php?id=$_GET[id]");
             mysqli_close($connect);
         }
     ?>
