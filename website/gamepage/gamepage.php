@@ -68,7 +68,7 @@
         <div class="wishlist">
             <?php
                 if (!empty($_SESSION["id"])) { 
-                    if (strpos($wishlist, $_GET["id"]) !== false) { 
+                    if (preg_match("/\b($_GET[id])\b/", $wishlist)) { // \b exact word match only \b **word Boundary
                         echo "<div class='wishbutton'><img src='/IMG/wishlist_disabled.png' alt='Game already on wishlist'></div>";
                     }
                     else {
@@ -95,7 +95,12 @@
         if (strcmp($_GET["add"], "true") == 0) {
             $connect = mysqli_connect("localhost", "root", "Abc@1234!", "pcgames");
 
-            $wishlist = $wishlist.",".$_GET["id"];
+            if (!empty($wishlist)) { 
+                $wishlist = $wishlist.",".$_GET["id"];
+            }
+            else {
+                $wishlist = $_GET["id"];
+            }
 
             $uquery = "UPDATE users SET wishlist = '$wishlist' WHERE id = $_SESSION[id]";
 
