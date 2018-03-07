@@ -51,7 +51,10 @@
                 echo "<span class='pr-title'>Price</span>";            
                 echo "<span class='pr-price'>".$game["price"]."€</span>"
             ?>
-        </div>        
+        </div>    
+        <div class="wishlist">
+            <a href=""><div class="wishbutton"><img src="/IMG/wishlist.png" alt="Add game to Wishlist"></div></a>
+        </div>   
     </div>
     <div class="description">
         <?php
