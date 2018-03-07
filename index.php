@@ -8,7 +8,7 @@
 <body>
     <div class="header">
         <div class="logo">
-            <a href="/index.php"><img src="LOGO/logo3.png" alt="logo.png"></a>
+            <a href="/index.php"><img src="LOGO/logo.png" alt="logo.png"></a>
         </div>
         <div class="searchbar">
             <form action="website/search.php" method="GET" target="body_frame">
