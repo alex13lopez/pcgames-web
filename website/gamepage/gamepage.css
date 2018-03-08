@@ -83,7 +83,7 @@ body {
     display: block;
     color: grey;
     font-weight: bolder;
-    font-size: 2.2em;
+    font-size: 1.6vw;
     padding-top: 15%;
 }
 
@@ -101,15 +101,15 @@ body {
 .ty-title {
     display: block;
     color: rgb(152, 104, 214);
-    font-size: 0.8em
+    font-size: 1vw;
 }
 
 .ty-type {
     display: block;
     color: grey;
     font-weight: bold;
-    font-size: 2.2em;
-    padding-top: 15%;
+    font-size: 1.6vw;
+    padding-top: 22%;
 }
 
 .region {
@@ -130,11 +130,11 @@ body {
     font-size: 0.8em
 }
 
-.re-type {
+.re-region {
     display: block;
     color: grey;
     font-weight: bold;
-    font-size: 1.6em;
+    font-size: 1.6vw;
     padding-top: 20%;
 }
 
@@ -160,8 +160,8 @@ body {
     display: block;
     color: grey;
     font-weight: bold;
-    font-size: 5em;
-    padding-top: 5%;
+    font-size: 5vw;
+    padding-top: 1%;
 }
 
 .wishlist {
@@ -193,7 +193,7 @@ body {
 }
 
 .wishlist .top {
-    padding-top: 7%;
+    padding-top: 5%;
 }
 
 .description {
@@ -217,6 +217,6 @@ body {
 .descr {
     margin: 0;
     display: block;
-    font-size: larger;
+    font-size: 1.35vw;
     margin-top: 1%;
 }

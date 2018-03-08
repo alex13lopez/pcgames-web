@@ -56,7 +56,7 @@
         <div class="region">
             <?php
                 echo "<span class='re-title'>Region</span>";            
-                echo "<span class='re-type'>".$game["region"]."</span>"
+                echo "<span class='re-region'>".$game["region"]."</span>"
             ?>
         </div>
         <div class="price">
@@ -69,10 +69,10 @@
             <?php
                 if (!empty($_SESSION["id"])) { 
                     if (preg_match("/\b($_GET[id])\b/", $wishlist)) { // \b exact word match only \b **word Boundary
-                        echo "<div class='wishbutton'><img src='/IMG/wishlist_disabled.png' alt='Game already on wishlist'></div>";
+                        echo "<div class='wishbutton'><img src='/IMG/wishlisted.png' alt='Game already on wishlist'></div>";
                     }
                     else {
-                        echo "<a href='gamepage.php?id=$_GET[id]&add=true'><div class='wishbutton'><img src='/IMG/wishlist.png' alt='Add game to Wishlist'></div></a>";
+                        echo "<a href='gamepage.php?id=$_GET[id]&add=true'><div class='wishbutton'><img src='/IMG/to_wishlist.png' alt='Add game to Wishlist'></div></a>";
                     }
                 }
                 else {

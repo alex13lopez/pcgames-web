@@ -36,12 +36,12 @@
             $query = "SELECT id, title FROM games WHERE id IN ($promotions)";
             $result = mysqli_query($link, $query);      
             
-            echo "<span class='title'> WEEKLY<br>HIGHLIGHTS </span>";
+            echo "<span class='title'> WEEKLY HIGHLIGHTS </span>";
             
             echo "<div class='row'>";             
             while ($query_row = mysqli_fetch_array($result)) { 
                 echo "<div class='column'>";
-                echo "<div class='gametitle'><span>".$query_row["title"]."</span></div>";
+                // echo "<div class='gametitle'><span>".$query_row["title"]."</span></div>";
                 echo "<div class='cover'><a href='/website/gamepage/gamepage.php?id=$query_row[id]'><img src='/IMG/$query_row[id]'></a></div>";
                 echo "</div>";        
                 }     
@@ -71,7 +71,7 @@
             echo "<div class='row'>";             
             while ($query_row = mysqli_fetch_array($bresult)) { 
                 echo "<div class='column'>";
-                echo "<div class='gametitle'><span>".$query_row["title"]."</span></div>";
+                // echo "<div class='gametitle'><span>".$query_row["title"]."</span></div>";
                 echo "<div class='cover'><a href='/website/gamepage/gamepage.php?id=$query_row[id]'><img src='/IMG/$query_row[id]'></a></div>";
                 echo "</div>";        
                 }     
